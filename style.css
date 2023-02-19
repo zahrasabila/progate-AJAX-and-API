@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#detail {
+  background-color: #e7c859;
+  border-radius: 10px;
+  border-width: medium;
+  border-style: solid;
+  border-color: #d0b34a;
+  width: 100%;
+  height: 10%;
+  text-align: center;
+  margin: auto;
+  margin-top: 0.5rem;
+}
+
+#btn {
+  padding: 0.5rem 1rem;
+  margin: 1.5rem;
+  background-color: #ffe480;
+  border: thin #d0b34a solid;
+  border-radius: 5px;
+}
+
+#btn:hover {
+  background-color: #f1d058;
+}
+
+#detail img {
+  width: 100%;
+}
+
+body {
+  text-align: center;
+  background-color: ivory;
+}
+
+.fetch {
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+p {
+  color: white;
+}

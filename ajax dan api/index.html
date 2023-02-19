@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Progate</title>
+  </head>
+  <body>
+    <div class="fetch">
+      <h1>Get Pikachu!</h1>
+      <button id="btn" onclick="detail()">Get!</button>
+      <div id="detail"></div>
+    </div>
+
+    <script>
+      fetch("https://pokeapi.co/api/v2/pokemon/25")
+        .then(function (response) {
+          if (response.status != 200) {
+            console.log("ops" + response.status);
+            return;
+          }
+
+          response.json().then(function (data) {
+            document.getElementById("detail").style.border = "none";
+            document.getElementById("detail").style.padding = "none";
+          });
+        })
+        .catch(function (err) {
+          console.log(err);
+        });
+
+      function detail() {
+        fetch("https://pokeapi.co/api/v2/pokemon/25").then(function (response) {
+          response.json().then(function (pikachu) {
+            document.getElementById("detail").innerHTML = "";
+            document
+              .getElementById("detail")
+              .insertAdjacentHTML(
+                "beforeend",
+                `<p> ${pikachu.id}: ${pikachu.name} </p> <img src='${pikachu.sprites.front_default}'> <p> Type: ${pikachu.types[0]["type"]["name"]} </p> `
+              );
+            document.getElementById("detail").style.border =
+              "medium solid #d0b34a";
+            document.getElementById("detail").style.padding = "1.5rem";
+            console.log(pikachu);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
